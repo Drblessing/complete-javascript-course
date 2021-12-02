@@ -1,4 +1,3 @@
-/*
 ////////////////////////////////////
 // Linking a JavaScript File
 let js = "amazing";
@@ -40,7 +39,7 @@ console.log(typeof javascriptIsFun);
 // console.log(typeof 23);
 // console.log(typeof 'Jonas');
 
-javascriptIsFun = 'YES!';
+javascriptIsFun = "YES!";
 console.log(typeof javascriptIsFun);
 
 let year;
@@ -61,10 +60,10 @@ const birthYear = 1991;
 // birthYear = 1990;
 // const job;
 
-var job = 'programmer';
-job = 'teacher'
+var job = "programmer";
+job = "teacher";
 
-lastName = 'Schmedtmann';
+lastName = "Schmedtmann";
 console.log(lastName);
 
 ////////////////////////////////////
@@ -78,9 +77,9 @@ console.log(ageJonas, ageSarah);
 console.log(ageJonas * 2, ageJonas / 10, 2 ** 3);
 // 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
 
-const firstName = 'Jonas';
-const lastName = 'Schmedtmann';
-console.log(firstName + ' ' + lastName);
+const firstName = "Jonas";
+const lastName = "Schmedtmann";
+console.log(firstName + " " + lastName);
 
 // Assignment operators
 let x = 10 + 5; // 15
@@ -113,7 +112,6 @@ console.log(x, y);
 
 const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
-*/
 
 ////////////////////////////////////
 // Coding Challenge #1
