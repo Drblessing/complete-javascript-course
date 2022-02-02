@@ -303,7 +303,6 @@ console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
 
-const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 console.log(allSections);
 
@@ -312,6 +311,7 @@ const allButtons = document.getElementsByTagName('button');
 console.log(allButtons);
 
 console.log(document.getElementsByClassName('btn'));
+const header = document.querySelector('.header');
 
 // Creating and inserting elements
 const message = document.createElement('div');
