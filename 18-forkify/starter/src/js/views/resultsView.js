@@ -1,9 +1,10 @@
+import View from './View.js';
 import icons from 'url:../../img/icons.svg';
 
-class ResultsView {
-  #parentElement = document.querySelector('.results');
-  #errorMessage = `No recipes found for your query! Please try again ;)`;
-  #generateMarkupPreview(rec) {
+class ResultsView extends View {
+  _parentElement = document.querySelector('.results');
+  _errorMessage = `No recipes found for your query! Please try again ;)`;
+  _generateMarkupPreview(rec) {
     return `<li class="preview">
     <a class="preview__link preview__link--active" href="#${rec.id}">
       <figure class="preview__fig">
@@ -21,20 +22,17 @@ class ResultsView {
     </a> 
   </li>`;
   }
-  #clear() {
-    this.#parentElement.innerHTML = '';
-  }
 
   render(results) {
     let markup = ``;
     results.forEach(rec => {
-      markup += this.#generateMarkupPreview(rec);
+      markup += this._generateMarkupPreview(rec);
     });
-    this.#clear();
-    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+    this._clear();
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
-  renderError(message = this.#errorMessage) {
+  renderError(message = this._errorMessage) {
     const markup = `
     <div class="error">
       <div>
@@ -45,8 +43,8 @@ class ResultsView {
       <p>${message}</p>
     </div>
     `;
-    this.#clear();
-    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+    this._clear();
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
   renderSpinner() {
@@ -57,8 +55,8 @@ class ResultsView {
         </svg>
       </div>
     `;
-    this.#parentElement.innerHTML = '';
-    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+    this._parentElement.innerHTML = '';
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 }
 

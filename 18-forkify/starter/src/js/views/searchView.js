@@ -1,24 +1,23 @@
-import icons from 'url:../../img/icons.svg';
+import View from './View.js';
 
 class SearchView {
-  #parentEl = document.querySelector('.search');
-  #message = '';
+  _parentElement = document.querySelector('.search');
 
   getQuery() {
-    const query = this.#parentEl.querySelector('.search__field').value;
-    this.#clearInput();
+    const query = this._parentElement.querySelector('.search__field').value;
+    this._clearInput();
     return query;
   }
 
-  #clearInput() {
-    this.#parentEl.querySelector('.search__field').value = '';
+  _clearInput() {
+    this._parentElement.querySelector('.search__field').value = '';
   }
   // publisher
   addHandlerSearch(handler) {
-    this.#parentEl.addEventListener('submit', ev => {
+    this._parentElement.addEventListener('submit', ev => {
       ev.preventDefault();
       handler();
-      this.#parentEl.querySelector('.search__field').value = '';
+      this._parentElement.querySelector('.search__field').value = '';
     });
   }
 }
