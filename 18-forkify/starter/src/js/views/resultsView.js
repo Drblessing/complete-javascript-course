@@ -48,6 +48,18 @@ class ResultsView {
     this.#clear();
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
   }
+
+  renderSpinner() {
+    const markup = `
+      <div class="spinner">
+        <svg>
+          <use href="${icons}#icon-loader"></use>
+        </svg>
+      </div>
+    `;
+    this.#parentElement.innerHTML = '';
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
 }
 
 export default new ResultsView();

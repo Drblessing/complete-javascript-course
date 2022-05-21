@@ -23,6 +23,7 @@ const controlSearchResults = async function () {
     // Get search query
     const query = searchView.getQuery();
     if (!query) return;
+    resultsView.renderSpinner();
 
     // Load search
     await model.loadSearchResults(query);
@@ -31,8 +32,7 @@ const controlSearchResults = async function () {
     // searchView.render(model.state.search.results);
     resultsView.render(model.state.search.results);
   } catch (err) {
-    searchView.renderError();
-    console.log(err);
+    resultsView.renderError();
   }
 };
 
