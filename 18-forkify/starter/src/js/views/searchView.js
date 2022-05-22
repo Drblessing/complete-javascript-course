@@ -1,6 +1,6 @@
 import View from './View.js';
 
-class SearchView {
+class SearchView extends View {
   _parentElement = document.querySelector('.search');
 
   getQuery() {
@@ -17,7 +17,6 @@ class SearchView {
     this._parentElement.addEventListener('submit', ev => {
       ev.preventDefault();
       handler();
-      this._parentElement.querySelector('.search__field').value = '';
     });
   }
 }
