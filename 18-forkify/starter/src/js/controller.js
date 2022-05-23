@@ -5,6 +5,7 @@ import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
+import { MODAL_CLOSE_SECONDS } from './config.js';
 
 // if (module.hot) {
 //   module.hot.accept();
@@ -89,7 +90,23 @@ const controlBookmarks = function () {
 const controlAddRecipe = async function (newRecipe) {
   // Upload New Recipe Data
   try {
+    addRecipeView.renderSpinner();
     await model.uploadRecipe(newRecipe);
+    console.log(model.state.recipe);
+
+    recipeView.render(model.state.recipe);
+
+    addRecipeView.renderMessage();
+
+    // Render Bookmarks
+    bookmarksView.render(model.state.bookmarks);
+
+    // Change ID in URL
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
+
+    setTimeout(function () {
+      addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SECONDS * 1000);
   } catch (err) {
     console.log('🔥', err);
     addRecipeView.renderError(err);
