@@ -1,6 +1,18 @@
 import icons from 'url:../../img/icons.svg';
+import { Fraction } from 'fractional';
 
 export default class View {
+  _data;
+
+  /**
+   * Render the received object to the DOM
+   * @param {Object | Object[]} data The data to be rendered (e.g. recipe)
+   * @param {boolean} [render = true] If false, create markup string instead of rendering to the DOM
+   * @returns {undefined | string} A markup string is returned if render = False
+   * @this {Object} View instance
+   * @author Daniel Blessing
+   * @todo Finish Documentation
+   */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
