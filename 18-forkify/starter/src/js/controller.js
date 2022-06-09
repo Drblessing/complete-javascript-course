@@ -10,6 +10,8 @@ import { MODAL_CLOSE_SECONDS } from './config.js';
 // if (module.hot) {
 //   module.hot.accept();
 // }
+const t = 'hello';
+const sdf = 'ti';
 
 const controlRecipes = async function () {
   try {

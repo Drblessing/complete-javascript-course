@@ -10,7 +10,8 @@
   "author": "Daniel Blessing",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.5.0"
+    "@parcel/transformer-sass": "^2.5.0",
+    "eslint": "^8.17.0"
   },
   "dependencies": {
     "fractional": "^1.0.0",
